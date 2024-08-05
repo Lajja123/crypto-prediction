@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const name = "Lajja Frame";
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://crypto-prediction-123.vercel.app/";
+  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://crypto-prediction-123.vercel.app";
 
   const frameMetadata = getFrameMetadata({
     buttons: [
