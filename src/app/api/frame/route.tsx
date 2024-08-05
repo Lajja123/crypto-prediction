@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       post_url: `${req.nextUrl.origin}/api/frame`,
       buttons: [
         {
-          label: 'View Lajja',
+          label: 'Cast',
         },
       ],
     })
@@ -33,7 +33,7 @@ export async function GET(req: NextRequest) {
       post_url: `${req.nextUrl.origin}/api/frame`,
       buttons: [
         {
-          label: 'View Lajja',
+          label: 'View Cast',
         },
       ],
     })
