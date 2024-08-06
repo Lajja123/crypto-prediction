@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
             fontFamily: 'sans-serif',
           }}
         >
-          3000
+          5000
         </div>
       ),
       {
