@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
             fontFamily: 'sans-serif',
           }}
         >
-          5000
+          Hiral
         </div>
       ),
       {
