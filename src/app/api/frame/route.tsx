@@ -1,41 +1,37 @@
-import { NextRequest, NextResponse } from "next/server";
-import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from "@coinbase/onchainkit/frame";
+import { NextRequest } from "next/server";
+import { FrameRequest, getFrameMessage } from "@coinbase/onchainkit/frame";
+import { ImageResponse } from "@vercel/og";
+import { generateFrameMetadata } from "@/utils/generateFrameMetadata";
+import FrameImage from "@/components/Frame";
 
-export const runtime = "edge";
+export const runtime = 'edge';
+
+export async function GET(req: NextRequest) {
+  const imageResponse = new ImageResponse(
+    <FrameImage text="Crypto here" />,
+    {
+      width: 1200,
+      height: 630,
+    }
+  );
+
+  const imageData = await imageResponse.arrayBuffer();
+  const metadata = generateFrameMetadata(imageData);
+
+  return new Response(metadata, {
+    headers: { 'Content-Type': 'text/html' },
+  });
+}
 
 export async function POST(req: NextRequest) {
   const body: FrameRequest = await req.json();
-  const { isValid, message } = await getFrameMessage(body, { neynarApiKey: process.env.NEYNAR_API_KEY });
-  
+  const { isValid, message } = await getFrameMessage(body);
+
   if (!isValid) {
-    return new NextResponse('Invalid frame request', { status: 400 });
+    return new Response('Invalid frame request', { status: 400 });
   }
 
-  const imageUrl = `${req.nextUrl.origin}/api/frame/image`;
-  return new NextResponse(
-    getFrameHtmlResponse({
-      image: imageUrl,
-      post_url: `${req.nextUrl.origin}/api/frame`,
-      buttons: [
-        {
-          label: 'Cast',
-        },
-      ],
-    })
-  );
-}
-
-export async function GET(req: NextRequest) {
-  const imageUrl = `${req.nextUrl.origin}/api/frame/image`;
-  return new NextResponse(
-    getFrameHtmlResponse({
-      image: imageUrl,
-      post_url: `${req.nextUrl.origin}/api/frame`,
-      buttons: [
-        {
-          label: 'View Cast',
-        },
-      ],
-    })
-  );
+  // Handle button click logic here if needed
+  // For now, we'll just return the same frame
+  return GET(req);
 }
