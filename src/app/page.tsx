@@ -15,6 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
           "🎉🔥 Check out this crypto Frame on Farcaster! 🖼️✨"
         )}&embeds[]=${encodeURIComponent(`${baseUrl}/api/frame`)}`,
       },
+      {
+        label: 'Connect MetaMask',
+        action: 'post_redirect',
+      },
     ],
     image: `${baseUrl}/api/frame/image`,
     postUrl: `${baseUrl}/api/frame`,

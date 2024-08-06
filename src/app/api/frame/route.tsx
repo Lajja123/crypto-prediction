@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       post_url: `${req.nextUrl.origin}/api/frame`,
       buttons: [
         {
-          label: 'Cast ',
+          label: 'Cast',
         },
       ],
     })
