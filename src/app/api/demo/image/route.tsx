@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const id = searchParams.get('id') || "1";
 
-  const text = `Crypto prediction #${id}`;
+  const text = `Crypto prediction`;
 
   return new ImageResponse(
     (
