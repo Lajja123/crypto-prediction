@@ -4,12 +4,10 @@ import { NextRequest } from "next/server";
 export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
-  // Extract the route parameter from the URL
   const { searchParams } = new URL(req.url);
-  const id = searchParams.get('id');
+  const id = searchParams.get('id') || "1";
 
-  // Use the id to generate unique content
-  const text = id ? `Crypto prediction #${id}` : 'Welcome to ';
+  const text = `Crypto prediction #${id}`;
 
   return new ImageResponse(
     (
