@@ -13,7 +13,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_URL || "https://1982-115-117-174-60.ngrok-free.app";
+    process.env.NEXT_PUBLIC_URL || "https://prediction123.vercel.app/";
 
   // Handle the button click
   if (message.button === 1) {
