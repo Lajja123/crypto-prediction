@@ -9,7 +9,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   return NextResponse.json({
     frameMetadata: {
       image: {
-        src: `${BASE_URL}/api/image`,
+        src: `${BASE_URL}/api/demo/image`,
         aspectRatio: "1.91:1",
       },
     },
@@ -20,7 +20,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   return NextResponse.json({
     frameMetadata: {
       image: {
-        src: `${BASE_URL}/api/image`,
+        src: `${BASE_URL}/api/demo/image`,
         aspectRatio: "1.91:1",
       },
     },

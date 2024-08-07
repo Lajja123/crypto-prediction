@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const id = searchParams.get('id') || "1";
 
-  const text = `Crypto prediction`;
+  const text = `Crypto prediction #${id}`;
 
   return new ImageResponse(
     (
@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
           alignItems: "center",
         }}
       >
-        <div>cryptoooo</div>
+        <div>{text}</div>
       </div>
     ),
     {
