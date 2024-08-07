@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
           alignItems: "center",
         }}
       >
-        <div>Crypto prediction Frame</div>
+        <div>Crypto prediction </div>
         {prediction && (
           <div style={{ fontSize: 24, marginTop: "20px" }}>{prediction}</div>
         )}

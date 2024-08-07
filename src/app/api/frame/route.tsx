@@ -50,7 +50,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const baseUrl =
-    process.env.NEXT_PUBLIC_URL || "https://f732-115-117-174-60.ngrok-free.app";
+    process.env.NEXT_PUBLIC_URL || "https://1982-115-117-174-60.ngrok-free.app";
 
   return NextResponse.json({
     frameMetadata: {
