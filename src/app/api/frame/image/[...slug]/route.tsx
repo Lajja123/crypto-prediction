@@ -3,20 +3,9 @@ import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { slug: string[] } }
-) {
+export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const prediction = searchParams.get("prediction");
-  const [imageType] = params.slug;
-
-  let title = "Crypto prediction Farcaster Frame";
-  if (imageType) {
-    title = `${
-      imageType.charAt(0).toUpperCase() + imageType.slice(1)
-    } prediction Farcaster Frame`;
-  }
+  const title = searchParams.get("title");
 
   return new ImageResponse(
     (
@@ -36,9 +25,6 @@ export async function GET(
         }}
       >
         <div>{title}</div>
-        {prediction && (
-          <div style={{ fontSize: 24, marginTop: "20px" }}>{prediction}</div>
-        )}
       </div>
     ),
     {
