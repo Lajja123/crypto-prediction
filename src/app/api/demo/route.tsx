@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+
+
+
 // Make sure to replace this with your actual base URL
 const BASE_URL = "https://prediction123.vercel.app";
 

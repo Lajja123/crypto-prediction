@@ -2,7 +2,7 @@ import { getFrameMetadata } from "@coinbase/onchainkit/frame";
 import type { Metadata } from "next";
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_URL || "https://prediction123.vercel.app";
+  process.env.NEXT_PUBLIC_URL || "https://prediction123.vercel.app/";
 
 // Generate frame metadata
 const frameMetadata = getFrameMetadata({
@@ -13,8 +13,8 @@ const frameMetadata = getFrameMetadata({
       target: `${baseUrl}/api/transaction`,
     },
   ],
-  image: `${baseUrl}/api/frame/image`,
-  postUrl: `${baseUrl}/api/frame`,
+  image: `${baseUrl}/api/demo/image`,
+  postUrl: `${baseUrl}/api/demo`,
 });
 
 // Define page metadata
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Crypto Prediction Frame",
     description: "A Farcaster Frame for Crypto Predictions",
-    images: [`${baseUrl}/api/frame/image`],
+    images: [`${baseUrl}/api/demo/image`],
   },
   other: {
     ...frameMetadata,

@@ -3,12 +3,13 @@ import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { text: string } }
-) {
-  const text = params.text || "Welcome to my Crypto Prediction!";
-  const decodedText = decodeURIComponent(text);
+export async function GET(req: NextRequest) {
+  // Extract the route parameter from the URL
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get('id');
+
+  // Use the id to generate unique content
+  const text = id ? `Crypto prediction #${id}` : 'Welcome to ';
 
   return new ImageResponse(
     (
@@ -16,19 +17,18 @@ export async function GET(
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          fontSize: 40,
+          color: "white",
+          background: "#000",
           width: "100%",
           height: "100%",
-          backgroundColor: "black",
-          color: "white",
-          fontSize: 60,
-          fontWeight: 700,
+          padding: "50px 200px",
           textAlign: "center",
-          padding: "0 50px",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        {decodedText}
+        <div>{text}</div>
       </div>
     ),
     {
