@@ -6,6 +6,7 @@ export const runtime = "edge";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const prediction = searchParams.get("prediction");
+  const title = searchParams.get("title") || "Crypto prediction ";
 
   return new ImageResponse(
     (
@@ -24,7 +25,7 @@ export async function GET(req: NextRequest) {
           alignItems: "center",
         }}
       >
-        <div>Crypto prediction Frame</div>
+        <div>{title}</div>
         {prediction && (
           <div style={{ fontSize: 24, marginTop: "20px" }}>{prediction}</div>
         )}

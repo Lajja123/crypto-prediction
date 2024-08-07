@@ -13,7 +13,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_URL || "https://prediction123.vercel.app/";
+    process.env.NEXT_PUBLIC_URL || "https://ac39-115-117-174-60.ngrok-free.app";
 
   // Handle the button click
   if (message.button === 1) {
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const baseUrl =
-    process.env.NEXT_PUBLIC_URL || "https://1982-115-117-174-60.ngrok-free.app";
+    process.env.NEXT_PUBLIC_URL || "https://ac39-115-117-174-60.ngrok-free.app";
 
   return NextResponse.json({
     frameMetadata: {
