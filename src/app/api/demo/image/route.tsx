@@ -5,8 +5,7 @@ export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const prediction = searchParams.get("prediction");
-  const title = searchParams.get("title") || "Farcaster Frame";
+  const text = searchParams.get("text") || "Welcome to my Farcaster Frame!";
 
   return new ImageResponse(
     (
@@ -14,21 +13,19 @@ export async function GET(req: NextRequest) {
         style={{
           display: "flex",
           flexDirection: "column",
-          fontSize: 40,
-          color: "white",
-          background: "#000",
+          alignItems: "center",
+          justifyContent: "center",
           width: "100%",
           height: "100%",
-          padding: "50px 200px",
+          backgroundColor: "black",
+          color: "white",
+          fontSize: 60,
+          fontWeight: 700,
           textAlign: "center",
-          justifyContent: "center",
-          alignItems: "center",
+          padding: "0 50px",
         }}
       >
-        <div>{title}</div>
-        {prediction && (
-          <div style={{ fontSize: 24, marginTop: "20px" }}>{prediction}</div>
-        )}
+        {text}
       </div>
     ),
     {

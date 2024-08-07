@@ -2,7 +2,7 @@ import { getFrameMetadata } from "@coinbase/onchainkit/frame";
 import type { Metadata } from "next";
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_URL || "https://ac39-115-117-174-60.ngrok-free.app";
+  process.env.NEXT_PUBLIC_URL || "https://prediction123.vercel.app";
 
 // Generate frame metadata
 const frameMetadata = getFrameMetadata({
