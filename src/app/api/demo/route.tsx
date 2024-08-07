@@ -25,12 +25,12 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       frameMetadata: {
         buttons: [{ label: "Get Another Prediction" }],
         image: {
-          src: `${baseUrl}/api/frame/image?prediction=${encodeURIComponent(
+          src: `${baseUrl}/api/demo/image?prediction=${encodeURIComponent(
             prediction
           )}`,
           aspectRatio: "1.91:1",
         },
-        postUrl: `${baseUrl}/api/frame`,
+        postUrl: `${baseUrl}/api/demo`,
       },
     });
   }
@@ -40,10 +40,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     frameMetadata: {
       buttons: [{ label: "View Prediction" }],
       image: {
-        src: `${baseUrl}/api/frame/image`,
+        src: `${baseUrl}/api/demo/image`,
         aspectRatio: "1.91:1",
       },
-      postUrl: `${baseUrl}/api/frame`,
+      postUrl: `${baseUrl}/api/demo`,
     },
   });
 }
@@ -56,10 +56,10 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     frameMetadata: {
       buttons: [{ label: "View Prediction" }],
       image: {
-        src: `${baseUrl}/api/frame/image`,
+        src: `${baseUrl}/api/demo/image`,
         aspectRatio: "1.91:1",
       },
-      postUrl: `${baseUrl}/api/frame`,
+      postUrl: `${baseUrl}/api/demo`,
     },
   });
 }

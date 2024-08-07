@@ -30,7 +30,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
           )}`,
           aspectRatio: "1.91:1",
         },
-        postUrl: `${baseUrl}/api/demo`,
+        postUrl: `${baseUrl}/api/frame`,
       },
     });
   }
@@ -40,10 +40,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     frameMetadata: {
       buttons: [{ label: "View Prediction" }],
       image: {
-        src: `${baseUrl}/api/demo/image`,
+        src: `${baseUrl}/api/frame/image`,
         aspectRatio: "1.91:1",
       },
-      postUrl: `${baseUrl}/api/demo`,
+      postUrl: `${baseUrl}/api/frame`,
     },
   });
 }
@@ -56,10 +56,10 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     frameMetadata: {
       buttons: [{ label: "View Prediction" }],
       image: {
-        src: `${baseUrl}/api/demo/image`,
+        src: `${baseUrl}/api/frame/image`,
         aspectRatio: "1.91:1",
       },
-      postUrl: `${baseUrl}/api/demo`,
+      postUrl: `${baseUrl}/api/frame`,
     },
   });
 }
