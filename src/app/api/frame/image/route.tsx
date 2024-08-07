@@ -1,23 +1,33 @@
-import { NextRequest } from "next/server";
 import { ImageResponse } from "@vercel/og";
+import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-export async function GET(request: NextRequest) {
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const prediction = searchParams.get("prediction");
+
   return new ImageResponse(
     (
       <div
         style={{
-          fontSize: 128,
-          background: 'white',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: "flex",
+          flexDirection: "column",
+          fontSize: 40,
+          color: "white",
+          background: "#000",
+          width: "100%",
+          height: "100%",
+          padding: "50px 200px",
+          textAlign: "center",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        Crypto Prediction
+        <div>Crypto prediction </div>
+        {prediction && (
+          <div style={{ fontSize: 24, marginTop: "20px" }}>{prediction}</div>
+        )}
       </div>
     ),
     {
