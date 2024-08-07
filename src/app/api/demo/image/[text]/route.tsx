@@ -7,7 +7,7 @@ export async function GET(
   req: NextRequest,
   { params }: { params: { text: string } }
 ) {
-  const text = params.text || "Welcome to my Farcaster Frame!";
+  const text = params.text || "Welcome to Crypto Prediction!";
   const decodedText = decodeURIComponent(text);
 
   return new ImageResponse(
