@@ -6,7 +6,7 @@ export const runtime = "edge";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const prediction = searchParams.get("prediction");
-  const title = searchParams.get("title") || "Crypto prediction ";
+  const title = searchParams.get("title") || "Farcaster Frame";
 
   return new ImageResponse(
     (
