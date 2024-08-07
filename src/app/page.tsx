@@ -13,7 +13,7 @@ const frameMetadata = getFrameMetadata({
       target: `${baseUrl}/api/transaction`,
     },
   ],
-  image: `${baseUrl}/api/demo/image`,
+  image: `${baseUrl}/api/frame/image`,
   postUrl: `${baseUrl}/api/demo`,
 });
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Crypto Prediction Frame",
     description: "A Farcaster Frame for Crypto Predictions",
-    images: [`${baseUrl}/api/demo/image`],
+    images: [`${baseUrl}/api/frame/image`],
   },
   other: {
     ...frameMetadata,

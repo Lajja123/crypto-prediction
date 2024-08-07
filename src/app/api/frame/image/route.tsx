@@ -4,8 +4,7 @@ import { NextRequest } from "next/server";
 export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const prediction = searchParams.get("prediction");
+  
 
   return new ImageResponse(
     (
@@ -25,9 +24,7 @@ export async function GET(req: NextRequest) {
         }}
       >
         <div>Crypto prediction Frame</div>
-        {prediction && (
-          <div style={{ fontSize: 24, marginTop: "20px" }}>{prediction}</div>
-        )}
+        
       </div>
     ),
     {
