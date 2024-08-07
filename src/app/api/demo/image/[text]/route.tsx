@@ -3,9 +3,12 @@ import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const text = searchParams.get("text") || "Welcome to my Farcaster Frame!";
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { text: string } }
+) {
+  const text = params.text || "Welcome to my Farcaster Frame!";
+  const decodedText = decodeURIComponent(text);
 
   return new ImageResponse(
     (
@@ -25,7 +28,7 @@ export async function GET(req: NextRequest) {
           padding: "0 50px",
         }}
       >
-        {text}
+        {decodedText}
       </div>
     ),
     {
