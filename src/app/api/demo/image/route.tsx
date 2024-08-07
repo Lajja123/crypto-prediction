@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
           alignItems: "center",
         }}
       >
-        <div>{text}</div>
+        <div>cryptoooo</div>
       </div>
     ),
     {
